@@ -1,0 +1,1720 @@
+{
+  "created_at": "2026-11-08T05:17:47.107980+00:00",
+  "external_verification": false,
+  "corpus_manifest_sha256": "0962ecf2c52322841396196b96c60b293ba068743d6cb811ecf2ef169e1a5302",
+  "label_scope": "synthetic shape detection, not active credentials",
+  "detectors": {
+    "gitleaks": {
+      "version": "8.30.1",
+      "command": [
+        "gitleaks.exe",
+        "dir",
+        ".",
+        "--report-format",
+        "json",
+        "--report-path",
+        "raw/gitleaks.json",
+        "--exit-code",
+        "0",
+        "--redact=100",
+        "--no-banner"
+      ],
+      "wall_seconds": 1.3856050999602303,
+      "bytes_scanned": 174750,
+      "mb_per_second": 0.12611818475914652,
+      "timing_includes_startup": true,
+      "cpu_seconds": null,
+      "peak_memory_bytes": null,
+      "resource_measurement": "wall-clock only",
+      "metrics": {
+        "tp": 1199,
+        "fp": 0,
+        "fn": 1,
+        "tn": 1200,
+        "scored": 2400,
+        "unscored": 100,
+        "recall": 0.9991666666666666,
+        "precision": 1.0,
+        "false_positive_rate": 0.0
+      },
+      "metric_scope": "any finding in the fixture; not provider classification accuracy",
+      "provider_coverage": {
+        "detected": 15,
+        "eligible": 15
+      },
+      "source_rule_metrics": {
+        "tp": 1199,
+        "fp": 0,
+        "fn": 1,
+        "tn": 1200,
+        "scored": 2400,
+        "unscored": 100,
+        "recall": 0.9991666666666666,
+        "precision": 1.0,
+        "false_positive_rate": 0.0
+      },
+      "by_format": {
+        "anthropic-api-key": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "aws-access-token": {
+          "tp": 49,
+          "fp": 0,
+          "fn": 1,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.98,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "datadog-access-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "digitalocean-access-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "digitalocean-pat": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "digitalocean-refresh-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "discord-client-secret": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "github-app-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "github-oauth": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "github-pat": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "github-refresh-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "hypixel-uuid": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0,
+          "scored": 0,
+          "unscored": 100,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": null
+        },
+        "linear-api-key": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "mailgun-private-api-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "mailgun-pub-key": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "npm-access-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "openai-api-key": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "sendgrid-api-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "shopify-access-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "shopify-custom-access-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "shopify-private-app-access-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "shopify-shared-secret": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "slack-bot-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "stripe-access-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "twilio-api-key": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        }
+      },
+      "by_provider_id": {
+        "svc_1918bc8e9a2901a62cd2a338": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_24ab6cdf066abfec8e188cbc": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_2b7316ac954235a13163f37e": {
+          "tp": 200,
+          "fp": 0,
+          "fn": 0,
+          "tn": 200,
+          "scored": 400,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_46f84fc9753234ca09f67e1e": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_5eff49c6c1be1daaafebf208": {
+          "tp": 150,
+          "fp": 0,
+          "fn": 0,
+          "tn": 150,
+          "scored": 300,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_6dd745132f9c4167084dce48": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_7e34b26dc4d48c38cd020969": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_87aede1a71da8bcfba771336": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_ab4c4f50a13a7192f1f58114": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_c963d39f05d5c4ce55ac5f05": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0,
+          "scored": 0,
+          "unscored": 100,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": null
+        },
+        "svc_d28b8b8f2e19a20bb3861b25": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_d416dbe69592105e1a27259a": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_da5f45707abfcb171412b28a": {
+          "tp": 49,
+          "fp": 0,
+          "fn": 1,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.98,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_da9cea40f544313d62a63195": {
+          "tp": 100,
+          "fp": 0,
+          "fn": 0,
+          "tn": 100,
+          "scored": 200,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_ec1f7ba4b003aaa381294ce5": {
+          "tp": 200,
+          "fp": 0,
+          "fn": 0,
+          "tn": 200,
+          "scored": 400,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_ff1d760e82b56127e42e66b0": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        }
+      },
+      "by_credential_type": {
+        "unknown": {
+          "tp": 1199,
+          "fp": 0,
+          "fn": 1,
+          "tn": 1200,
+          "scored": 2400,
+          "unscored": 100,
+          "recall": 0.9991666666666666,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        }
+      },
+      "by_variant": {
+        "unverified": {
+          "tp": 1199,
+          "fp": 0,
+          "fn": 1,
+          "tn": 1200,
+          "scored": 2400,
+          "unscored": 100,
+          "recall": 0.9991666666666666,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        }
+      },
+      "by_context": {
+        "env": {
+          "tp": 312,
+          "fp": 0,
+          "fn": 0,
+          "tn": 336,
+          "scored": 648,
+          "unscored": 27,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "json": {
+          "tp": 312,
+          "fp": 0,
+          "fn": 0,
+          "tn": 288,
+          "scored": 600,
+          "unscored": 25,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "python": {
+          "tp": 288,
+          "fp": 0,
+          "fn": 0,
+          "tn": 288,
+          "scored": 576,
+          "unscored": 24,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "yaml": {
+          "tp": 287,
+          "fp": 0,
+          "fn": 1,
+          "tn": 288,
+          "scored": 576,
+          "unscored": 24,
+          "recall": 0.9965277777777778,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        }
+      }
+    },
+    "trufflehog": {
+      "version": "trufflehog 3.99.8",
+      "command": [
+        "trufflehog.exe",
+        "filesystem",
+        ".",
+        "--json",
+        "--no-verification",
+        "--no-update",
+        "--results=verified,unknown,unverified",
+        "--concurrency=1",
+        "--no-filter-unverified",
+        "--fail-on-scan-errors"
+      ],
+      "wall_seconds": 1.6957737000193447,
+      "bytes_scanned": 174750,
+      "mb_per_second": 0.1030503067702999,
+      "timing_includes_startup": true,
+      "cpu_seconds": null,
+      "peak_memory_bytes": null,
+      "resource_measurement": "wall-clock only",
+      "metrics": {
+        "tp": 750,
+        "fp": 0,
+        "fn": 450,
+        "tn": 1200,
+        "scored": 2400,
+        "unscored": 100,
+        "recall": 0.625,
+        "precision": 1.0,
+        "false_positive_rate": 0.0
+      },
+      "metric_scope": "any finding in the fixture; not provider classification accuracy",
+      "provider_coverage": {
+        "detected": 10,
+        "eligible": 15
+      },
+      "source_rule_metrics": null,
+      "by_format": {
+        "anthropic-api-key": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "aws-access-token": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 50,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "datadog-access-token": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 50,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "digitalocean-access-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "digitalocean-pat": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "digitalocean-refresh-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "discord-client-secret": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 50,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "github-app-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "github-oauth": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "github-pat": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "github-refresh-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "hypixel-uuid": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0,
+          "scored": 0,
+          "unscored": 100,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": null
+        },
+        "linear-api-key": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "mailgun-private-api-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "mailgun-pub-key": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 50,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "npm-access-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "openai-api-key": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "sendgrid-api-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "shopify-access-token": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 50,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "shopify-custom-access-token": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 50,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "shopify-private-app-access-token": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 50,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "shopify-shared-secret": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 50,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "slack-bot-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "stripe-access-token": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "twilio-api-key": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 50,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        }
+      },
+      "by_provider_id": {
+        "svc_1918bc8e9a2901a62cd2a338": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 50,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "svc_24ab6cdf066abfec8e188cbc": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 50,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "svc_2b7316ac954235a13163f37e": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 200,
+          "tn": 200,
+          "scored": 400,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "svc_46f84fc9753234ca09f67e1e": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_5eff49c6c1be1daaafebf208": {
+          "tp": 150,
+          "fp": 0,
+          "fn": 0,
+          "tn": 150,
+          "scored": 300,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_6dd745132f9c4167084dce48": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_7e34b26dc4d48c38cd020969": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_87aede1a71da8bcfba771336": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 50,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "svc_ab4c4f50a13a7192f1f58114": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_c963d39f05d5c4ce55ac5f05": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0,
+          "scored": 0,
+          "unscored": 100,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": null
+        },
+        "svc_d28b8b8f2e19a20bb3861b25": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_d416dbe69592105e1a27259a": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_da5f45707abfcb171412b28a": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 50,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": null,
+          "false_positive_rate": 0.0
+        },
+        "svc_da9cea40f544313d62a63195": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 50,
+          "tn": 100,
+          "scored": 200,
+          "unscored": 0,
+          "recall": 0.5,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_ec1f7ba4b003aaa381294ce5": {
+          "tp": 200,
+          "fp": 0,
+          "fn": 0,
+          "tn": 200,
+          "scored": 400,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "svc_ff1d760e82b56127e42e66b0": {
+          "tp": 50,
+          "fp": 0,
+          "fn": 0,
+          "tn": 50,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        }
+      },
+      "by_credential_type": {
+        "unknown": {
+          "tp": 750,
+          "fp": 0,
+          "fn": 450,
+          "tn": 1200,
+          "scored": 2400,
+          "unscored": 100,
+          "recall": 0.625,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        }
+      },
+      "by_variant": {
+        "unverified": {
+          "tp": 750,
+          "fp": 0,
+          "fn": 450,
+          "tn": 1200,
+          "scored": 2400,
+          "unscored": 100,
+          "recall": 0.625,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        }
+      },
+      "by_context": {
+        "env": {
+          "tp": 195,
+          "fp": 0,
+          "fn": 117,
+          "tn": 336,
+          "scored": 648,
+          "unscored": 27,
+          "recall": 0.625,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "json": {
+          "tp": 195,
+          "fp": 0,
+          "fn": 117,
+          "tn": 288,
+          "scored": 600,
+          "unscored": 25,
+          "recall": 0.625,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "python": {
+          "tp": 180,
+          "fp": 0,
+          "fn": 108,
+          "tn": 288,
+          "scored": 576,
+          "unscored": 24,
+          "recall": 0.625,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "yaml": {
+          "tp": 180,
+          "fp": 0,
+          "fn": 108,
+          "tn": 288,
+          "scored": 576,
+          "unscored": 24,
+          "recall": 0.625,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        }
+      }
+    },
+    "detect-secrets": {
+      "version": "1.5.0",
+      "command": [
+        "detect-secrets.exe",
+        "scan",
+        "--no-verify",
+        "--all-files",
+        "."
+      ],
+      "wall_seconds": 3.3272362999850884,
+      "bytes_scanned": 174750,
+      "mb_per_second": 0.05252106680874549,
+      "timing_includes_startup": true,
+      "cpu_seconds": null,
+      "peak_memory_bytes": null,
+      "resource_measurement": "wall-clock only",
+      "metrics": {
+        "tp": 849,
+        "fp": 312,
+        "fn": 351,
+        "tn": 888,
+        "scored": 2400,
+        "unscored": 100,
+        "recall": 0.7075,
+        "precision": 0.7312661498708011,
+        "false_positive_rate": 0.26
+      },
+      "metric_scope": "any finding in the fixture; not provider classification accuracy",
+      "provider_coverage": {
+        "detected": 14,
+        "eligible": 15
+      },
+      "source_rule_metrics": null,
+      "by_format": {
+        "anthropic-api-key": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "aws-access-token": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "datadog-access-token": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "digitalocean-access-token": {
+          "tp": 0,
+          "fp": 13,
+          "fn": 50,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": 0.0,
+          "false_positive_rate": 0.26
+        },
+        "digitalocean-pat": {
+          "tp": 0,
+          "fp": 13,
+          "fn": 50,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": 0.0,
+          "false_positive_rate": 0.26
+        },
+        "digitalocean-refresh-token": {
+          "tp": 0,
+          "fp": 13,
+          "fn": 50,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": 0.0,
+          "false_positive_rate": 0.26
+        },
+        "discord-client-secret": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "github-app-token": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "github-oauth": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "github-pat": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "github-refresh-token": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "hypixel-uuid": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0,
+          "scored": 0,
+          "unscored": 100,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": null
+        },
+        "linear-api-key": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "mailgun-private-api-token": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "mailgun-pub-key": {
+          "tp": 0,
+          "fp": 13,
+          "fn": 50,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": 0.0,
+          "false_positive_rate": 0.26
+        },
+        "npm-access-token": {
+          "tp": 49,
+          "fp": 13,
+          "fn": 1,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.98,
+          "precision": 0.7903225806451613,
+          "false_positive_rate": 0.26
+        },
+        "openai-api-key": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "sendgrid-api-token": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "shopify-access-token": {
+          "tp": 0,
+          "fp": 13,
+          "fn": 50,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": 0.0,
+          "false_positive_rate": 0.26
+        },
+        "shopify-custom-access-token": {
+          "tp": 0,
+          "fp": 13,
+          "fn": 50,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": 0.0,
+          "false_positive_rate": 0.26
+        },
+        "shopify-private-app-access-token": {
+          "tp": 0,
+          "fp": 13,
+          "fn": 50,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": 0.0,
+          "false_positive_rate": 0.26
+        },
+        "shopify-shared-secret": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "slack-bot-token": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "stripe-access-token": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "twilio-api-key": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        }
+      },
+      "by_provider_id": {
+        "svc_1918bc8e9a2901a62cd2a338": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "svc_24ab6cdf066abfec8e188cbc": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "svc_2b7316ac954235a13163f37e": {
+          "tp": 50,
+          "fp": 52,
+          "fn": 150,
+          "tn": 148,
+          "scored": 400,
+          "unscored": 0,
+          "recall": 0.25,
+          "precision": 0.49019607843137253,
+          "false_positive_rate": 0.26
+        },
+        "svc_46f84fc9753234ca09f67e1e": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "svc_5eff49c6c1be1daaafebf208": {
+          "tp": 0,
+          "fp": 39,
+          "fn": 150,
+          "tn": 111,
+          "scored": 300,
+          "unscored": 0,
+          "recall": 0.0,
+          "precision": 0.0,
+          "false_positive_rate": 0.26
+        },
+        "svc_6dd745132f9c4167084dce48": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "svc_7e34b26dc4d48c38cd020969": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "svc_87aede1a71da8bcfba771336": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "svc_ab4c4f50a13a7192f1f58114": {
+          "tp": 49,
+          "fp": 13,
+          "fn": 1,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 0.98,
+          "precision": 0.7903225806451613,
+          "false_positive_rate": 0.26
+        },
+        "svc_c963d39f05d5c4ce55ac5f05": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 0,
+          "scored": 0,
+          "unscored": 100,
+          "recall": null,
+          "precision": null,
+          "false_positive_rate": null
+        },
+        "svc_d28b8b8f2e19a20bb3861b25": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "svc_d416dbe69592105e1a27259a": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "svc_da5f45707abfcb171412b28a": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "svc_da9cea40f544313d62a63195": {
+          "tp": 50,
+          "fp": 26,
+          "fn": 50,
+          "tn": 74,
+          "scored": 200,
+          "unscored": 0,
+          "recall": 0.5,
+          "precision": 0.6578947368421053,
+          "false_positive_rate": 0.26
+        },
+        "svc_ec1f7ba4b003aaa381294ce5": {
+          "tp": 200,
+          "fp": 52,
+          "fn": 0,
+          "tn": 148,
+          "scored": 400,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        },
+        "svc_ff1d760e82b56127e42e66b0": {
+          "tp": 50,
+          "fp": 13,
+          "fn": 0,
+          "tn": 37,
+          "scored": 100,
+          "unscored": 0,
+          "recall": 1.0,
+          "precision": 0.7936507936507936,
+          "false_positive_rate": 0.26
+        }
+      },
+      "by_credential_type": {
+        "unknown": {
+          "tp": 849,
+          "fp": 312,
+          "fn": 351,
+          "tn": 888,
+          "scored": 2400,
+          "unscored": 100,
+          "recall": 0.7075,
+          "precision": 0.7312661498708011,
+          "false_positive_rate": 0.26
+        }
+      },
+      "by_variant": {
+        "unverified": {
+          "tp": 849,
+          "fp": 312,
+          "fn": 351,
+          "tn": 888,
+          "scored": 2400,
+          "unscored": 100,
+          "recall": 0.7075,
+          "precision": 0.7312661498708011,
+          "false_positive_rate": 0.26
+        }
+      },
+      "by_context": {
+        "env": {
+          "tp": 221,
+          "fp": 168,
+          "fn": 91,
+          "tn": 168,
+          "scored": 648,
+          "unscored": 27,
+          "recall": 0.7083333333333334,
+          "precision": 0.5681233933161953,
+          "false_positive_rate": 0.5
+        },
+        "json": {
+          "tp": 220,
+          "fp": 0,
+          "fn": 92,
+          "tn": 288,
+          "scored": 600,
+          "unscored": 25,
+          "recall": 0.7051282051282052,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "python": {
+          "tp": 204,
+          "fp": 0,
+          "fn": 84,
+          "tn": 288,
+          "scored": 576,
+          "unscored": 24,
+          "recall": 0.7083333333333334,
+          "precision": 1.0,
+          "false_positive_rate": 0.0
+        },
+        "yaml": {
+          "tp": 204,
+          "fp": 144,
+          "fn": 84,
+          "tn": 144,
+          "scored": 576,
+          "unscored": 24,
+          "recall": 0.7083333333333334,
+          "precision": 0.5862068965517241,
+          "false_positive_rate": 0.5
+        }
+      }
+    }
+  },
+  "errors": [],
+  "sampling_bias": "Catalog formats mostly originate from Gitleaks rules; this is not a representative scanner ranking.",
+  "platform": {
+    "system": "Windows",
+    "release": "11",
+    "machine": "AMD64",
+    "python": "3.12.4"
+  }
+}

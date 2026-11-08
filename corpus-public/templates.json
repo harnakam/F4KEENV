@@ -1,0 +1,252 @@
+[
+  {
+    "format": "github-pat",
+    "service": "github",
+    "variable": "GITHUB_PAT",
+    "template": "ghp_<random:36>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "github-oauth",
+    "service": "github",
+    "variable": "GITHUB_OAUTH",
+    "template": "gho_<random:36>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "github-app-token",
+    "service": "github",
+    "variable": "GITHUB_APP_TOKEN",
+    "template": "ghs_<random:36>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "github-refresh-token",
+    "service": "github",
+    "variable": "GITHUB_REFRESH_TOKEN",
+    "template": "ghr_<random:36>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "stripe-access-token",
+    "service": "stripe",
+    "variable": "STRIPE_SECRET_KEY",
+    "template": "sk_live_<random:48>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "aws-access-token",
+    "service": "aws",
+    "variable": "AWS_ACCESS_KEY_ID",
+    "template": "AKIA<random:16>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "digitalocean-access-token",
+    "service": "digitalocean",
+    "variable": "DIGITALOCEAN_ACCESS_TOKEN",
+    "template": "doo_v1_<random:64>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "digitalocean-pat",
+    "service": "digitalocean",
+    "variable": "DIGITALOCEAN_PAT",
+    "template": "dop_v1_<random:64>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "digitalocean-refresh-token",
+    "service": "digitalocean",
+    "variable": "DIGITALOCEAN_REFRESH_TOKEN",
+    "template": "dor_v1_<random:64>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "shopify-access-token",
+    "service": "shopify",
+    "variable": "SHOPIFY_ACCESS_TOKEN",
+    "template": "shpat_<random:32>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "shopify-custom-access-token",
+    "service": "shopify",
+    "variable": "SHOPIFY_CUSTOM_ACCESS_TOKEN",
+    "template": "shpca_<random:32>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "shopify-private-app-access-token",
+    "service": "shopify",
+    "variable": "SHOPIFY_PRIVATE_APP_ACCESS_TOKEN",
+    "template": "shppa_<random:32>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "shopify-shared-secret",
+    "service": "shopify",
+    "variable": "SHOPIFY_SHARED_SECRET",
+    "template": "shpss_<random:32>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "mailgun-private-api-token",
+    "service": "mailgun",
+    "variable": "MAILGUN_API_KEY",
+    "template": "key-<random:32>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "mailgun-pub-key",
+    "service": "mailgun",
+    "variable": "MAILGUN_PUBLIC_KEY",
+    "template": "pubkey-<random:32>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "npm-access-token",
+    "service": "npm",
+    "variable": "NPM_TOKEN",
+    "template": "npm_<random:36>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "openai-api-key",
+    "service": "openai",
+    "variable": "OPENAI_API_KEY",
+    "template": "sk-proj-<random:74>T3BlbkFJ<random:74>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "sendgrid-api-token",
+    "service": "sendgrid",
+    "variable": "SENDGRID_API_KEY",
+    "template": "SG.<random:22>.<random:43>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "twilio-api-key",
+    "service": "twilio",
+    "variable": "TWILIO_API_KEY",
+    "template": "SK<random:32>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "slack-bot-token",
+    "service": "slack",
+    "variable": "SLACK_BOT_TOKEN",
+    "template": "xoxb-<random:12>-<random:12>-<random:24>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "discord-client-secret",
+    "service": "discord",
+    "variable": "DISCORD_CLIENT_SECRET",
+    "template": "<random:32>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "datadog-access-token",
+    "service": "datadog",
+    "variable": "DATADOG_API_KEY",
+    "template": "<random:40>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "linear-api-key",
+    "service": "linear",
+    "variable": "LINEAR_API_KEY",
+    "template": "lin_api_<random:40>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "anthropic-api-key",
+    "service": "anthropic",
+    "variable": "ANTHROPIC_API_KEY",
+    "template": "sk-ant-api03-<random:93>AA",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "evidence": "detector-pattern; not a provider specification"
+  },
+  {
+    "format": "hypixel-uuid",
+    "service": "hypixel",
+    "variable": "HYPIXEL_API_KEY",
+    "template": "<uuid-v4>",
+    "synthetic": true,
+    "public_release": true,
+    "source": "https://api.hypixel.net/",
+    "evidence": "approximation: official docs confirm API-Key header, not UUID syntax; not verified as current format"
+  }
+]

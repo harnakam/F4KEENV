@@ -10,6 +10,7 @@ import platform
 from importlib.metadata import version
 
 from jsonschema import Draft202012Validator
+from . import __version__
 
 BASE = Path(__file__).resolve().parent.parent
 KINDS = ('providers', 'credentials', 'evidence', 'detectors', 'tasks')
@@ -30,6 +31,7 @@ class Registry:
         self.root.mkdir(parents=True, exist_ok=True)
         self.db = sqlite3.connect(self.root / 'registry.sqlite3')
         self.db.execute('CREATE TABLE IF NOT EXISTS records (kind TEXT, id TEXT, payload TEXT, PRIMARY KEY(kind,id))')
+        self.db.execute("CREATE INDEX IF NOT EXISTS records_provider ON records(kind, json_extract(payload, '$.provider_id'))")
         self.validators = {}
         for kind in KINDS:
             schema = json.loads((BASE / 'schemas' / (kind + '.schema.json')).read_text())
@@ -85,7 +87,7 @@ class Registry:
             path = destination / (kind + '.jsonl')
             path.write_text(content, encoding='utf-8', newline='\n')
             files[path.name] = {'rows': len(rows), 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
-        summary = {'schema_version': 1, 'collector_version': '0.1.0',
+        summary = {'schema_version': 1, 'collector_version': __version__,
                    'runtime': {'python': platform.python_version(), 'jsonschema': version('jsonschema')},
                    'created_at': now(), 'snapshot': run_id, 'files': files,
                    'candidate_services': len(data['providers']),

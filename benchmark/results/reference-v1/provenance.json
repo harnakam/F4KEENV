@@ -1,0 +1,23 @@
+{
+  "collector_version": "0.2.0",
+  "fixture_count": 2500,
+  "scanners_executed": 3,
+  "scored_per_scanner": 2400,
+  "unscored_hypixel_per_scanner": 100,
+  "unknown_serialization_skipped": 2720,
+  "source_files": {
+    "f4keenv/benchmark.py": "6b636d20054f7f7427e21adb374c76c92c55113c2152851ac83b3156302869eb",
+    "f4keenv/corpus.py": "c99b8c83cc7b0a529a61b280fb8dbc3bebab3661883727df6d149ac73589f539",
+    "f4keenv/github_benchmark.py": "c08d1ee76e9f17c88e6b49cb17f816143ef69cc6bfd478c339262c5c48c585f3",
+    "f4keenv/github_patterns.py": "bdc989c78cb1bbe0acb020121b8f6fdc3623fb9a677e033ce2a918a15381deea",
+    "f4keenv/ingest.py": "c5321fe13126324cd873d8d72f709503578cbe9b1f2546dda54a562b6271957b",
+    "f4keenv/openapi.py": "19be23609c572fda6e867dc84f5261f9df97e150c06446b0669f38b89e36a3c0",
+    "f4keenv/scheduler.py": "a148cdaa8e9df92f5a6a64d84f1c493a54c2636d0d847e1842959ff04a91092e",
+    "f4keenv/sources.py": "56122a1515d3ce9a8aa5f6b6ecd04303f6e6218a7a3dc65ff28c33141a32dd20",
+    "f4keenv/store.py": "bbcbd3a254640772acbba2830f4e0a63ea81bc8836daeaef0a67d05530ee6eee",
+    "f4keenv/__init__.py": "7dba4e20b30a87c9c59061ddd8c5ca078b3af2cd13d311d8cd804bc571181c4e",
+    "f4keenv/__main__.py": "e4630bc19ac1d3b129cd76765ba39c07502aa1e21905f5322bd014b0a8fb4daa"
+  },
+  "github_hosted": "not_run: eligible private experiment repository not specified",
+  "raw_credential_outputs_published": false
+}

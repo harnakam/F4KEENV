@@ -1,0 +1,16 @@
+[
+  {
+    "tool": "gitleaks",
+    "version": "8.30.1",
+    "release_url": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_windows_x64.zip",
+    "archive_sha256": "d29144deff3a68aa93ced33dddf84b7fdc26070add4aa0f4513094c8332afc4e",
+    "binary_sha256": "17157e2ee8b76fc8b1d8bee607a250e34b8a8023c8bc81822d4b5ee4d78fcb7c"
+  },
+  {
+    "tool": "trufflehog",
+    "version": "3.99.8",
+    "release_url": "https://github.com/trufflesecurity/trufflehog/releases/download/v3.99.8/trufflehog_3.99.8_windows_amd64.tar.gz",
+    "archive_sha256": "89415ee864cf343bd37633645ef04f87493aed3a52fc4529ae8f25828f4004d2",
+    "binary_sha256": "adc76a94cdf6617fcbd206f77224787ba3c8f56a1177331713dfc7b09f9914c6"
+  }
+]

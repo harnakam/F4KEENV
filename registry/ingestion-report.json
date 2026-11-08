@@ -1,19 +1,41 @@
 {
   "command": "collect",
-  "started_at": "2026-11-08T04:42:02.051128+00:00",
+  "started_at": "2026-11-08T05:04:45.876242+00:00",
   "sources": {
     "apisguru": {
       "listed_services": 2529,
-      "specs_attempted": 20,
-      "specs_loaded": 20,
-      "errors": []
+      "specs_attempted": 2529,
+      "specs_loaded": 2527,
+      "errors": [
+        {
+          "source_key": "microsoft.com:graph",
+          "url": "https://api.apis.guru/v2/specs/microsoft.com/graph/1.0.1/openapi.json",
+          "error": "Response exceeds 33554432 bytes: https://api.apis.guru/v2/specs/microsoft.com/graph/1.0.1/openapi.json"
+        },
+        {
+          "source_key": "microsoft.com:graph-beta",
+          "url": "https://api.apis.guru/v2/specs/microsoft.com/graph-beta/1.0.1/openapi.json",
+          "error": "Response exceeds 33554432 bytes: https://api.apis.guru/v2/specs/microsoft.com/graph-beta/1.0.1/openapi.json"
+        }
+      ]
     },
     "gitleaks": 222,
     "github-patterns": 531,
     "trufflehog": 893,
     "detect-secrets": 27
   },
-  "errors": [],
+  "errors": [
+    {
+      "source_key": "microsoft.com:graph",
+      "url": "https://api.apis.guru/v2/specs/microsoft.com/graph/1.0.1/openapi.json",
+      "error": "Response exceeds 33554432 bytes: https://api.apis.guru/v2/specs/microsoft.com/graph/1.0.1/openapi.json"
+    },
+    {
+      "source_key": "microsoft.com:graph-beta",
+      "url": "https://api.apis.guru/v2/specs/microsoft.com/graph-beta/1.0.1/openapi.json",
+      "error": "Response exceeds 33554432 bytes: https://api.apis.guru/v2/specs/microsoft.com/graph-beta/1.0.1/openapi.json"
+    }
+  ],
   "summary": {
     "schema_version": 1,
     "collector_version": "0.1.0",
@@ -21,20 +43,20 @@
       "python": "3.12.4",
       "jsonschema": "4.26.0"
     },
-    "created_at": "2026-11-08T04:42:03.951899+00:00",
-    "snapshot": "20261108T044203Z-d1a29047",
+    "created_at": "2026-11-08T05:08:46.262511+00:00",
+    "snapshot": "20261108T050845Z-44a0a2bd",
     "files": {
       "providers.jsonl": {
         "rows": 2545,
-        "sha256": "00379d05cbd0c479c02c5c949b098a6653bb85f43e98cab50a1d6b7759454a69"
+        "sha256": "5ea8dfc4b692ebceb8322ad3aff4c45e0c6433e032e9d5794a0eb45158e6f176"
       },
       "credentials.jsonl": {
-        "rows": 41,
-        "sha256": "a995a3a77a8c3e5445adac9db371ccb26aa98160c77b4b6ca7facbee814f3d6c"
+        "rows": 2745,
+        "sha256": "a0df0418d1bdf341e15e0416cfd9f5dc6ab99b9017c9fe38182c04cc23b4fc43"
       },
       "evidence.jsonl": {
-        "rows": 28,
-        "sha256": "36c0c81e5a0a70acfb971475721e9b309fdf44748a76510dd68b324a8e0ad1a1"
+        "rows": 2535,
+        "sha256": "1910693d7ab237782002ff25f7b12939ed32801015d03df15e89ca3f7402bad0"
       },
       "detectors.jsonl": {
         "rows": 4,
@@ -46,14 +68,14 @@
       }
     },
     "candidate_services": 2545,
-    "auth_observed_services": 12,
+    "auth_observed_services": 2003,
     "officially_validated_services": 0,
-    "credential_records": 41,
+    "credential_records": 2745,
     "detector_rules": 222,
     "detector_source_units": 920,
     "hosted_supported_patterns": 531,
     "service_goal": 10000,
     "goal_reached": false
   },
-  "completed_at": "2026-11-08T04:42:03.959900+00:00"
+  "completed_at": "2026-11-08T05:08:46.314511+00:00"
 }

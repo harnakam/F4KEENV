@@ -13,7 +13,13 @@
     "generator_version",
     "seed_id",
     "source_evidence_ids",
-    "public_release"
+    "public_release",
+    "expected",
+    "kind",
+    "context",
+    "path",
+    "sha256",
+    "label_basis"
   ],
   "properties": {
     "fixture_id": {
@@ -61,6 +67,41 @@
     },
     "public_release": {
       "type": "boolean"
+    },
+    "expected": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "kind": {
+      "enum": [
+        "positive",
+        "near_miss",
+        "natural_negative"
+      ]
+    },
+    "context": {
+      "enum": [
+        "env",
+        "json",
+        "yaml",
+        "python"
+      ]
+    },
+    "path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "label_basis": {
+      "enum": [
+        "unverified_approximation",
+        "synthetic_shape_and_context"
+      ]
     }
   }
 }

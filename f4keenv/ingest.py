@@ -2,6 +2,8 @@
 import json
 import tomllib
 import urllib.parse
+from http.client import HTTPException
+from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
 from jsonschema import ValidationError
 
 from .openapi import canonical, extract
@@ -11,7 +13,7 @@ APISGURU = 'https://api.apis.guru/v2/list.json'
 GITLEAKS_REF = '5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c'
 
 
-def provider(registry, domain, product, name, evidence_id, source_key, observed=False):
+def provider(registry, domain, product, name, evidence_id, source_key, observed=False, extra=None):
     key, domain, product = canonical(domain, product)
     old = registry.get('providers', key)
     sources = set(old['source_keys'] if old else []) | {source_key}
@@ -21,11 +23,16 @@ def provider(registry, domain, product, name, evidence_id, source_key, observed=
            'evidence_ids': sorted(evidence), 'validation_status': old['validation_status'] if old else 'candidate',
            'auth_observed': observed or bool(old and old['auth_observed']),
            'official_identity_verified': old['official_identity_verified'] if old else False}
+    if extra:
+        row.update(extra)
     registry.put('providers', row)
     return key
 
 
 def queue_research(registry, row, evidence_id):
+    existing = registry.get('tasks', identity('task', row['id'], 'official-auth-research'))
+    if existing and existing['status'] in {'running', 'complete'}:
+        return
     registry.put('tasks', {'id': identity('task', row['id'], 'official-auth-research'),
         'provider_id': row['id'], 'status': 'pending', 'priority': 0.7,
         'queries': [
@@ -39,23 +46,22 @@ def ingest_openapi(registry, spec, url, body, domain, product, source_key, retri
     if not isinstance(spec, dict) or not isinstance(spec.get('info', {}), dict):
         raise ValueError('OpenAPI document and info must be objects')
     evidence_id = registry.evidence(url, body, 'aggregated_openapi', retrieved_at=retrieved_at)
-    key = provider(registry, domain, product, spec.get('info', {}).get('title') or product, evidence_id, source_key)
+    key, _, _ = canonical(domain, product)
     rows, coverage = extract(spec, key, evidence_id)
     # Replace facts from this scheme namespace; removed schemes must not linger after refresh.
-    for old in registry.rows('credentials'):
-        if old['provider_id'] == key and old['evidence_kind'] == 'aggregated_openapi':
-            registry.db.execute('DELETE FROM records WHERE kind=? AND id=?', ('credentials', old['id']))
+    registry.db.execute("DELETE FROM records WHERE kind='credentials' AND json_extract(payload, '$.provider_id')=? AND json_extract(payload, '$.evidence_kind')='aggregated_openapi'", (key,))
     for row in rows:
         registry.put('credentials', row)
-    row = registry.get('providers', key)
-    row['auth_observed'] = bool(rows)
-    row['openapi_coverage'] = coverage
-    row['origin_urls'] = [item.get('url') for item in spec.get('info', {}).get('x-origin', []) if isinstance(item, dict) and item.get('url')]
-    registry.put('providers', row)
+    origins = spec.get('info', {}).get('x-origin') or []
+    if isinstance(origins, dict):
+        origins = [origins]
+    provider(registry, domain, product, spec.get('info', {}).get('title') or product, evidence_id, source_key,
+             extra={'auth_observed': bool(rows), 'openapi_coverage': coverage,
+                    'origin_urls': [item['url'] for item in origins if isinstance(item, dict) and item.get('url')]})
     return len(rows)
 
 
-def ingest_apisguru(registry, fetcher, limit):
+def ingest_apisguru(registry, fetcher, limit, workers=4):
     body, meta = fetcher.fetch(APISGURU)
     listing = json.loads(body)
     evidence_id = registry.evidence(APISGURU, body, 'directory', retrieved_at=meta['retrieved_at'])
@@ -67,7 +73,11 @@ def ingest_apisguru(registry, fetcher, limit):
         if preferred not in entry.get('versions', {}):
             continue
         version = entry['versions'][preferred]
-        key = provider(registry, domain, product, version.get('info', {}).get('title') or source_key, evidence_id, source_key)
+        categories = version.get('info', {}).get('x-apisguru-categories') or []
+        categories = [categories] if isinstance(categories, str) else categories
+        categories = [c for c in categories if isinstance(c, str) and c]
+        key = provider(registry, domain, product, version.get('info', {}).get('title') or source_key, evidence_id, source_key,
+                       extra={'category': categories[0] if categories else 'unknown', 'source_categories': categories})
         queue_research(registry, registry.get('providers', key), evidence_id)
         if version.get('swaggerUrl'):
             candidates.append((domain, product, source_key, version['swaggerUrl']))
@@ -83,15 +93,31 @@ def ingest_apisguru(registry, fetcher, limit):
                 del groups[domain]
     results = {'listed_services': len(candidates), 'specs_attempted': 0, 'specs_loaded': 0, 'errors': []}
     registry.db.commit()
-    for domain, product, source_key, url in ordered[:limit]:
-        results['specs_attempted'] += 1
-        try:
-            payload, info = fetcher.fetch(url)
-            with registry.db:
-                ingest_openapi(registry, json.loads(payload), url, payload, domain, product, source_key, info['retrieved_at'])
-            results['specs_loaded'] += 1
-        except (OSError, ValueError, ValidationError) as error:
-            results['errors'].append({'source_key': source_key, 'url': url, 'error': str(error)})
+    candidates = iter(ordered[:limit])
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        pending = {}
+        def submit_one():
+            candidate = next(candidates, None)
+            if candidate:
+                pending[pool.submit(fetcher.fetch, candidate[3])] = candidate
+        for _ in range(workers):
+            submit_one()
+        while pending:
+            completed, _ = wait(pending, return_when=FIRST_COMPLETED)
+            for future in completed:
+                domain, product, source_key, url = pending.pop(future)
+                results['specs_attempted'] += 1
+                try:
+                    payload, info = future.result()
+                    with registry.db:
+                        ingest_openapi(registry, json.loads(payload), url, payload, domain, product, source_key, info['retrieved_at'])
+                    results['specs_loaded'] += 1
+                except (OSError, ValueError, ValidationError, HTTPException) as error:
+                    results['errors'].append({'source_key': source_key, 'url': url, 'error': str(error)})
+                if results['specs_attempted'] % 25 == 0:
+                    print(f'OpenAPI {results["specs_attempted"]}/{min(limit, len(ordered))}: {results["specs_loaded"]} loaded, {len(results["errors"])} errors', flush=True)
+                submit_one()
+    results['errors'].sort(key=lambda row: row['source_key'])
     return results
 
 

@@ -39,6 +39,8 @@ HTTPタイムアウト30秒、レスポンス上限32MiB、ホストごとの待
 取得日時とSHA-256付きキャッシュを使用します。ネットワーク取得先はソース実装内の許可ホストに限定します。
 再取得は `collect --refresh`。失敗したソース・仕様は `collection-report.json` に記録して終了コード1を返します。
 成功した取り込み結果は残るため、失敗を隠さず再開できます。
+`--workers 4`（既定値）で取得を並列化しますが、ホスト全体で毎秒最大4リクエストに制限します。
+バージョン名に空白が含まれる取得URLはエンコードし、SQLite更新はメインスレッドのトランザクションで行います。
 
 台帳はSQLiteのトランザクションで保存し、次のJSONLを改変しないスナップショットとして書き出します。
 `latest.json` が最新スナップショットを示し、各ファイルの件数とSHA-256は `manifest.json` に記録します。
@@ -68,9 +70,64 @@ OR/ANDの要件、匿名アクセス、ローカルJSON Pointer参照、OAuth fl
 集約ディレクトリと検出器からの情報は公式確認に昇格させません。不明な形式・発行方式は `unknown` のままです。
 10,000件の合成キーを10,000サービスの調査完了とは数えません。
 
-現在の範囲はP0の収集・出典・解析・検証基盤です。公式docsの再帰検索、
-人手監査、4検出器の実行比較、public-safe corpusへの移行は未実装です。
-この収集コマンドは既存の公開合成データを変更・再生成・再公開しません。
+収集コマンドは既存の公開合成データを変更・再生成・再公開しません。
+
+## 調査キュー・監査・生成・検出器比較
+
+```sh
+# 新規性・カテゴリの不足・不確実性・検出器関連性・根拠の強さで優先順位を更新
+python -m f4keenv schedule --limit 100 --output work/research-next.jsonl
+
+# 出典種別・形式の確度・confidenceで層化した人手レビュー対象
+python -m f4keenv audit-sample --per-stratum 5 --output work/audit-sample.jsonl
+
+# 出典を持つ既知25形式から50正例＋50負例ずつ生成。高忠実度データはGit除外領域へ
+python -m f4keenv generate-corpus --output benchmark-local/evaluation-v1
+python -m f4keenv validate-corpus benchmark-local/evaluation-v1
+
+# 値を一切生成しない公開用テンプレート。形式が不明なOpenAPI認証情報も明示して出力
+python -m f4keenv public-templates --output corpus-public-new
+
+# Windows x64: 公式リリースの固定バージョンを取得して公開checksumと照合
+python scripts/setup_benchmark_tools.py
+python -m pip install -r requirements-benchmark.txt
+
+# PowerShell用。コマンドは1行で実行
+python -m f4keenv benchmark benchmark-local/evaluation-v1 --output benchmark-local/results-v1 --gitleaks work/tools/gitleaks/gitleaks.exe --trufflehog work/tools/trufflehog/trufflehog.exe --detect-secrets .venv/Scripts/detect-secrets.exe
+```
+
+調査キューは実行可能な具体・抽象・関連の検索語と既知の原典URLを持ちます。
+`schedule` 自体は検索サービスへ送信せず、未調査タスクをエージェントや人に渡すために書き出します。
+ドキュメントの再帰検索の自動実行と、人手による根拠確認は別途必要です。
+
+ローカルcorpusは.env・JSON・YAML・Pythonの4文脈で生成し、正例・形式を1文字壊したnear-miss・
+UUID/commit hashの自然な負例を区別します。固定seedが既定で、`--seed NAME` または `--os-random` で切り替えます。
+値にダミー用markerを入れず、manifestに `synthetic`・`never_issued`・`public_release:false`・
+出典ID・generator version・seed ID・ファイルハッシュを必須で持たせます。
+公開形式が不明なサービスのキーを捏造しません。生成対象からの除外件数もmanifestに記録します。
+近似形式のHypixelは正解ラベルを `null` にして採点から除外します。
+
+Gitleaksはローカルの実バイナリーを実行します。TruffleHogは `--no-verification --no-update`、
+detect-secretsは `--no-verify` を固定し、外部のcredential検証を止めます。
+各検出器のversion・コマンド・壁時計時間・MB/s・TP/FP/FN/TN・precision/recall/FPRを保存し、
+provider・credential type・variant・context・format別にも集計します。失敗した検出器を全件FNとして採点しません。
+CPU時間と最大メモリーは未計測として `null` を記録します。
+
+出力は `results.jsonl`・`summary.json`・`report.md`。`raw/` には合成値を含み得るためローカルに残し、
+共有する場合は正規化結果と集計のみを使います。入力形式の多くはGitleaksルール由来なので、
+この小規模corpusを検出器の総合ランキングと解釈しないでください。単独キーではペアcredentialの検出条件も再現しません。
+
+GitHub hosted scannerは別コマンドです。自動アップロードは行いません。
+
+```sh
+python -m f4keenv github-benchmark OWNER/PRIVATE-REPO benchmark-local/evaluation-v1 --path-prefix corpus --output benchmark-local/github-results
+```
+
+privateリポジトリ・Secret Protectionの利用条件・secret scanning有効・validity checks無効を確認し、
+Git treeのblobハッシュでローカルと同一のcorpusが配置されていることを検証してからalertを取得します。
+API取得時点でsecret値を投影から除外し、レポートには含めません。スキャン完了未確認の段階では未検出をFNにしません。
+hosted scanningの完了を確認した場合だけ `--scan-complete` を付けて採点します。
+公開リポジトリは拒否します。利用可能なprivate実験先が未指定のため、GitHub hostedでの実測値はまだありません。
 
 すべての値はローカルの乱数から生成します。実在キーの収集、認証情報の読み込み、
 キー発行、サービスへの認証リクエストは行いません。値の接頭辞は形式に沿っていますが、
