@@ -1,0 +1,130 @@
+{
+  "method": "Compare samples to pinned detector regexes, without network access.\n\nThis is a Python regex comparison, not a full Gitleaks execution (entropy,\nallowlists and keyword prefilters are not evaluated).\n",
+  "results": [
+    {
+      "format": "github-pat",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "github-oauth",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "github-app-token",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "github-refresh-token",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "stripe-access-token",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "aws-access-token",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "digitalocean-access-token",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "digitalocean-pat",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "digitalocean-refresh-token",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "shopify-access-token",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "shopify-custom-access-token",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "shopify-private-app-access-token",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "shopify-shared-secret",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "mailgun-private-api-token",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "mailgun-pub-key",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "npm-access-token",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "openai-api-key",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "sendgrid-api-token",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "twilio-api-key",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "slack-bot-token",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "discord-client-secret",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "datadog-access-token",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "linear-api-key",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "anthropic-api-key",
+      "samples": 400,
+      "regex_matches": 400
+    },
+    {
+      "format": "hypixel-uuid",
+      "samples": 400,
+      "regex_matches": null
+    }
+  ]
+}

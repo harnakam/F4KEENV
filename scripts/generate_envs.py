@@ -51,10 +51,10 @@ def render(name, stage):
         'ENCRYPTION_KEY': secrets.token_hex(32),
     }
     if name in ('platform', 'payments', 'billing', 'orders', 'checkout'):
-        values.update(STRIPE_SECRET_KEY='sk_fixture_' + token(48),
-                      STRIPE_WEBHOOK_SECRET='whsec_fixture_' + token(32))
+        values.update(STRIPE_SECRET_KEY='sk_live_' + token(48),
+                      STRIPE_WEBHOOK_SECRET='whsec_' + token(32))
     if name in ('platform', 'media', 'uploads', 'backup', 'minio'):
-        values.update(AWS_ACCESS_KEY_ID='FKIA' + token(16, string.ascii_uppercase + string.digits),
+        values.update(AWS_ACCESS_KEY_ID='AKIA' + token(16, string.ascii_uppercase + '234567'),
                       AWS_SECRET_ACCESS_KEY=token(40), AWS_REGION='ap-northeast-1',
                       S3_BUCKET=f'{name}-{stage}-assets',
                       S3_ENDPOINT='http://localhost:9000')
@@ -63,9 +63,9 @@ def render(name, stage):
                       SMTP_USER=f'{name}@example.invalid', SMTP_PASSWORD=token(32),
                       MAIL_FROM=f'noreply@{name}.example.invalid')
     if name in ('platform', 'analytics', 'search', 'reporting', 'worker'):
-        values['OPENAI_API_KEY'] = 'sk-fixture-' + token(100)
+        values['OPENAI_API_KEY'] = 'sk-proj-' + token(74) + 'T3BlbkFJ' + token(74)
     if name in ('platform', 'webhooks', 'scheduler', 'audit', 'console'):
-        values['GITHUB_TOKEN'] = 'gh_fixture_' + token(36)
+        values['GITHUB_TOKEN'] = 'ghp_' + token(36)
     return ''.join(f'{key}={value}\n' for key, value in values.items())
 
 
