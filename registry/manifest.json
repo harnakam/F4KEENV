@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "collector_version": "0.1.0",
+  "runtime": {
+    "python": "3.12.4",
+    "jsonschema": "4.26.0"
+  },
+  "created_at": "2026-11-08T04:42:49.339072+00:00",
+  "snapshot": "20261108T044249Z-1dc7c6c5",
+  "files": {
+    "providers.jsonl": {
+      "rows": 2545,
+      "sha256": "00379d05cbd0c479c02c5c949b098a6653bb85f43e98cab50a1d6b7759454a69"
+    },
+    "credentials.jsonl": {
+      "rows": 41,
+      "sha256": "a995a3a77a8c3e5445adac9db371ccb26aa98160c77b4b6ca7facbee814f3d6c"
+    },
+    "evidence.jsonl": {
+      "rows": 28,
+      "sha256": "36c0c81e5a0a70acfb971475721e9b309fdf44748a76510dd68b324a8e0ad1a1"
+    },
+    "detectors.jsonl": {
+      "rows": 4,
+      "sha256": "65df817e1a542b3e8bfb80cda0d7b433cda1283d9b93135b88d40c910adbfa5d"
+    },
+    "tasks.jsonl": {
+      "rows": 2529,
+      "sha256": "f9027fbf3d30acee55aa7a92656ec7bca2da3d4c969763d61ab9d8df6a619410"
+    }
+  },
+  "candidate_services": 2545,
+  "auth_observed_services": 12,
+  "officially_validated_services": 0,
+  "credential_records": 41,
+  "detector_rules": 222,
+  "detector_source_units": 920,
+  "hosted_supported_patterns": 531,
+  "service_goal": 10000,
+  "goal_reached": false
+}

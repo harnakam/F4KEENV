@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://f4keenv.invalid/schemas/fixture.schema.json",
+  "type": "object",
+  "required": [
+    "fixture_id",
+    "provider_id",
+    "credential_type",
+    "variant",
+    "synthetic",
+    "never_issued",
+    "generator_id",
+    "generator_version",
+    "seed_id",
+    "source_evidence_ids",
+    "public_release"
+  ],
+  "properties": {
+    "fixture_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "credential_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "variant": {
+      "type": "string",
+      "minLength": 1
+    },
+    "synthetic": {
+      "const": true
+    },
+    "never_issued": {
+      "const": true
+    },
+    "generator_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generator_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "seed_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "public_release": {
+      "type": "boolean"
+    }
+  }
+}

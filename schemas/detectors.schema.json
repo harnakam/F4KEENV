@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://f4keenv.invalid/schemas/detectors.schema.json",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "revision",
+    "evidence_ids",
+    "rules",
+    "global_allowlists",
+    "index_kind",
+    "provider_mapping"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "global_allowlists": {
+      "type": [
+        "object",
+        "array"
+      ]
+    },
+    "index_kind": {
+      "enum": [
+        "rules",
+        "source_index",
+        "supported_patterns"
+      ]
+    },
+    "provider_mapping": {
+      "const": "unresolved"
+    }
+  }
+}

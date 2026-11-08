@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://f4keenv.invalid/schemas/evidence.schema.json",
+  "type": "object",
+  "required": [
+    "id",
+    "url",
+    "sha256",
+    "retrieved_at",
+    "first_seen_at",
+    "source_kind",
+    "revision",
+    "license",
+    "redistributed_body"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "url": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "retrieved_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "first_seen_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_kind": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1
+    },
+    "redistributed_body": {
+      "const": false
+    }
+  }
+}

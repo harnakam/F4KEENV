@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://f4keenv.invalid/schemas/providers.schema.json",
+  "type": "object",
+  "required": [
+    "id",
+    "provider_domain",
+    "product",
+    "name",
+    "category",
+    "source_keys",
+    "evidence_ids",
+    "validation_status",
+    "auth_observed",
+    "official_identity_verified"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provider_domain": {
+      "type": "string",
+      "minLength": 1
+    },
+    "product": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_keys": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "validation_status": {
+      "enum": [
+        "candidate",
+        "validated"
+      ]
+    },
+    "auth_observed": {
+      "type": "boolean"
+    },
+    "official_identity_verified": {
+      "type": "boolean"
+    },
+    "openapi_coverage": {
+      "type": "object"
+    },
+    "origin_urls": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}
