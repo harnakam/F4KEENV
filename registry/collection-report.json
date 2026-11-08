@@ -1,48 +1,48 @@
 {
   "command": "export",
-  "started_at": "2026-11-08T05:14:12.185388+00:00",
+  "started_at": "2026-11-08T05:54:48.343916+00:00",
   "sources": {},
   "errors": [],
   "summary": {
     "schema_version": 1,
-    "collector_version": "0.2.0",
+    "collector_version": "0.3.0",
     "runtime": {
       "python": "3.12.4",
       "jsonschema": "4.26.0"
     },
-    "created_at": "2026-11-08T05:14:14.511844+00:00",
-    "snapshot": "20261108T051414Z-01eba88f",
+    "created_at": "2026-11-08T05:54:50.722208+00:00",
+    "snapshot": "20261108T055450Z-72371f8a",
     "files": {
       "providers.jsonl": {
-        "rows": 2545,
-        "sha256": "5ea8dfc4b692ebceb8322ad3aff4c45e0c6433e032e9d5794a0eb45158e6f176"
+        "rows": 2644,
+        "sha256": "10247c6f14db3a5582fcf69ac2ddd82c0054f3fa7db7be9e11f4a143badc8f60"
       },
       "credentials.jsonl": {
-        "rows": 2745,
-        "sha256": "a0df0418d1bdf341e15e0416cfd9f5dc6ab99b9017c9fe38182c04cc23b4fc43"
+        "rows": 2911,
+        "sha256": "9080e5fe4e7447d7edbdffcd23131ff4e562467af66e9fe2dde51970b96040fb"
       },
       "evidence.jsonl": {
-        "rows": 2535,
-        "sha256": "1910693d7ab237782002ff25f7b12939ed32801015d03df15e89ca3f7402bad0"
+        "rows": 2536,
+        "sha256": "b131b441e56f5c95f4822fd4e2e8c5801870cab07c85baf10f86454b00d8104f"
       },
       "detectors.jsonl": {
         "rows": 4,
         "sha256": "65df817e1a542b3e8bfb80cda0d7b433cda1283d9b93135b88d40c910adbfa5d"
       },
       "tasks.jsonl": {
-        "rows": 2545,
-        "sha256": "82b8cdd04d41c2ccd5e92e73dd4dcd1da078d5ca3f1cf423ff2d6fd6d3951345"
+        "rows": 2644,
+        "sha256": "d7b624d1e1c92e3a54df89d52051cea35e57a9c90087d806cf41490e63452dc4"
       }
     },
-    "candidate_services": 2545,
+    "candidate_services": 2644,
     "auth_observed_services": 2003,
     "officially_validated_services": 0,
-    "credential_records": 2745,
+    "credential_records": 2911,
     "detector_rules": 222,
     "detector_source_units": 920,
     "hosted_supported_patterns": 531,
     "service_goal": 10000,
     "goal_reached": false
   },
-  "completed_at": "2026-11-08T05:14:14.562222+00:00"
+  "completed_at": "2026-11-08T05:54:50.775799+00:00"
 }

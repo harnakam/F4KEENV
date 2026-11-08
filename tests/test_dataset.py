@@ -15,12 +15,16 @@ class DatasetTests(unittest.TestCase):
     def test_generation_integrity_and_no_overwrite(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp) / 'samples'
-            self.assertEqual(dataset.generate(root, CATALOG, 2), 50)
+            self.assertEqual(dataset.generate(root, CATALOG, 2), 2 * len(CATALOG))
             before = (root / 'manifest.json').read_bytes()
             with self.assertRaises(ValueError):
                 dataset.generate(root, CATALOG, 2)
             self.assertEqual(before, (root / 'manifest.json').read_bytes())
             manifest = json.loads(before)
+            self.assertEqual(manifest['service_count'], len({s['service'] for s in CATALOG}))
+            self.assertEqual(manifest['format_count'], len(CATALOG))
+            by_id = {spec['id']: spec for spec in CATALOG}
+            self.assertTrue(all(sample['service'] == by_id[sample['format_id']]['service'] for sample in manifest['samples']))
             sample = root / manifest['samples'][0]['path']
             sample.write_text('GITHUB_PAT=broken\n')
             with self.assertRaises(ValueError):

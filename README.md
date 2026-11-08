@@ -1,7 +1,11 @@
 # F4KEENV
 
 多数のAPIサービスの認証情報を模した合成シークレット・データセット。
-新しいデータセットは **16サービス・25形式 × 400件 = 10,000件**。
+現在の生成カタログは **115サービス・191形式**です。元の16サービス・25形式から拡張しました。
+追加166形式は固定した公開検出ルールとGoソースのサービス分類に由来し、独立したGo正規表現でも生成例を検証しています。
+サービス数はトークン種別数と分け、汎用JWT・秘密鍵・ハッシュ等をサービスとして数えません。
+これは「115サービスの現行公式発行方式を確認済み」という意味ではありません。
+既存の公開10,000件と最初のベンチマークは、旧16サービス・25形式の凍結スナップショットです。
 既存の121個の環境設定ファイルも保持しています。
 
 ## 調査台帳の収集
@@ -58,7 +62,7 @@ Gitleaksは既存カタログと同じコミットに固定し、regexだけで�
 TruffleHogとdetect-secretsはソースの発見索引です。ソースユニット数を実装済み検出ルール数やサービス数と混同しません。
 GitHubの公式対応表はページに埋め込まれた公開JSON全体から取り込み、表示先頭ページだけの取得を避けます。
 正規表現自体は非公開のため取得しません。ページ構造が変わった場合は部分取り込みをせず失敗として記録します。
-旧カタログ25形式も台帳に取り込みますが、識別の根拠が異なるため `catalog:` 名前空間の未検証候補とします。
+生成カタログ191形式も台帳に取り込みますが、識別の根拠が異なるため `catalog:` 名前空間の未検証候補とします。
 ドメインの所有関係、買収、製品間の統合を推測して自動マージする処理は含めません。
 
 OpenAPI解析はSwagger 2.0 / OpenAPI 3.xのJSONに対応します。ルートと操作ごとのsecurity、
@@ -81,7 +85,7 @@ python -m f4keenv schedule --limit 100 --output work/research-next.jsonl
 # 出典種別・形式の確度・confidenceで層化した人手レビュー対象
 python -m f4keenv audit-sample --per-stratum 5 --output work/audit-sample.jsonl
 
-# 出典を持つ既知25形式から50正例＋50負例ずつ生成。高忠実度データはGit除外領域へ
+# 出典を持つ現在の191形式から50正例＋50負例ずつ生成。高忠実度データはGit除外領域へ
 python -m f4keenv generate-corpus --output benchmark-local/evaluation-v1
 python -m f4keenv validate-corpus benchmark-local/evaluation-v1
 
@@ -135,14 +139,15 @@ hosted scanningの完了を確認した場合だけ `--scan-complete` を付け�
 
 ## 使い方
 
-キー生成器はPython 3.10以上。生成器自体に外部パッケージは不要です。
+parts/UUID形式の旧生成器はPython 3.10以上で動きます。
+拡張カタログのregex形式は `rstr==3.2.2` が必要です。通常はPython 3.11以上で `requirements-research.txt` を導入してください。
 
 ```sh
 # 初回生成: 25形式それぞれ400件。既存出力には上書きしません。
 python scripts/generate_dataset.py
 
-# 別ディレクトリへ新しい1万件を生成
-python scripts/generate_dataset.py --samples 400 --output another-dataset
+# 別ディレクトリへ約1万件を生成（191形式 × 60件）
+python scripts/generate_dataset.py --samples 60 --output benchmark-local/secrets-115-services
 
 # 件数・形式・重複・SHA-256・パス・余分な.envを検証
 python scripts/generate_dataset.py --check
@@ -162,15 +167,32 @@ python scripts/generate_envs.py --check
 - `research/pattern-results.json`: 公開ルールの正規表現との比較結果。
 
 GitHub、Stripe、AWS、DigitalOcean、Shopify、Mailgun、npm、OpenAI、SendGrid、
-Twilio、Slack、Discord、Datadog、Linear、Anthropic、Hypixelを対象とします。
+Twilio、Slack、Discord、Datadog、Linear、Anthropic、Hypixel等の115サービスを対象とします。
 同じサービスの異なるトークン種別は別の「形式」として数えます。
 公開キーや識別子も含むため、全件が秘密鍵という分類ではありません。
 
-24形式の根拠はGitleaksの公開検出定義です。参照コミットは
+Hypixel以外の190形式の根拠はGitleaksの公開検出定義です。参照コミットは
 `5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c`。
 [元定義](https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml)
 は現行API仕様の保証ではなく、旧形式・ヒューリスティックを含みます。
 正規表現の抜粋はGitleaks由来です。ライセンスは `research/GITLEAKS-LICENSE` を参照。
+
+カタログの拡張を再実行するには `python scripts/expand_catalog.py` を使用します（Goが必要）。
+上流の `RuleID` と定義ファイルを対応付け、JFrog/Artifactory等の宣言済みaliasを統合し、
+一般形式や生成不能なルールは除外理由付きで `research/catalog-expansion.json` に記録します。
+各追加形式を10 seed × 4文脈で生成し、Pythonでの形式検証に加えて元のGo/RE2 regexでも照合します。
+上流ソース中のサンプルcredential値は取り込みません。
+`catalog/services.json` を手動編集した場合は `collect --spec-limit 0` で出典台帳を同期してください。
+
+`--samples` は**形式ごとの件数**です。191形式 × 60件で11,460件になります。
+新しいdataset manifestは `service_count` と `format_count`、`samples_per_format` を別に持ち、
+生成に使ったカタログを保存します。カタログ拡張後も旧10,000件のmanifestを検証できます。
+
+拡張後の実行証跡は `research/service-expansion-verification.json`、191形式の照合結果は
+`research/expanded-pattern-results.json` に保存しています。115サービス・1,528 fixtureに対する
+3検出器の4,584判定は `benchmark/results/expanded-115/` を参照してください。
+高忠実度の11,460件の値本体はローカルの `benchmark-local/secrets-115-services/` に保持し、
+新しい値を公開GitHubへ自動追加する処理は含めません。
 
 [Hypixel公式資料](https://api.hypixel.net/)は `API-Key` ヘッダーを確認できますが、
 UUID形式の保証は確認できていません。HypixelのUUID v4サンプルは**近似形式**として

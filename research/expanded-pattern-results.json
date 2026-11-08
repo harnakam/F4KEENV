@@ -1,0 +1,963 @@
+{
+  "method": "Compare samples to pinned detector regexes, without network access.\n\nThis is a Python regex comparison, not a full Gitleaks execution (entropy,\nallowlists and keyword prefilters are not evaluated).\n",
+  "results": [
+    {
+      "format": "1password-secret-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "adafruit-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "adobe-client-id",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "adobe-client-secret",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "airtable-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "airtable-personnal-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "algolia-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "alibaba-access-key-id",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "alibaba-secret-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "anthropic-admin-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "anthropic-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "asana-client-id",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "asana-client-secret",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "atlassian-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "authress-service-client-access-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "aws-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "azure-ad-client-secret",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "beamer-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "bitbucket-client-id",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "bitbucket-client-secret",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "bittrex-access-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "bittrex-secret-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "clickhouse-cloud-api-secret-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "clojars-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "cloudflare-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "cloudflare-global-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "codecov-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "cohere-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "coinbase-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "confluent-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "confluent-secret-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "contentful-delivery-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "databricks-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "datadog-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "defined-networking-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "digitalocean-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "digitalocean-pat",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "digitalocean-refresh-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "discord-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "discord-client-id",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "discord-client-secret",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "doppler-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "droneci-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "dropbox-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "dropbox-long-lived-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "duffel-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "dynatrace-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "easypost-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "easypost-test-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "etsy-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "facebook-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "facebook-page-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "facebook-secret",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "fastly-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "finicity-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "finicity-client-secret",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "finnhub-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "flickr-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "flutterwave-encryption-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "flutterwave-public-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "flutterwave-secret-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "flyio-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "frameio-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "freshbooks-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "github-app-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "github-fine-grained-pat",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "github-oauth",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "github-pat",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "github-refresh-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "gitlab-cicd-job-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "gitlab-deploy-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "gitlab-feature-flag-client-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "gitlab-feed-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "gitlab-incoming-mail-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "gitlab-kubernetes-agent-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "gitlab-oauth-app-secret",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "gitlab-pat",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "gitlab-pat-routable",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "gitlab-ptt",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "gitlab-rrt",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "gitlab-runner-authentication-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "gitlab-runner-authentication-token-routable",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "gitlab-scim-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "gitlab-session-cookie",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "gitter-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "gcp-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "grafana-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "grafana-cloud-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "grafana-service-account-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "harness-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "hashicorp-tf-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "vault-service-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "heroku-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "heroku-api-key-v2",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "hubspot-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "huggingface-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "huggingface-organization-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "hypixel-uuid",
+      "samples": 60,
+      "regex_matches": null
+    },
+    {
+      "format": "infracost-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "intercom-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "intra42-client-secret",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "artifactory-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "artifactory-reference-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "jfrog-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "jfrog-identity-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "kraken-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "kucoin-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "kucoin-secret-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "launchdarkly-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "linear-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "linear-client-secret",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "linkedin-client-id",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "linkedin-client-secret",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "looker-client-id",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "looker-client-secret",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "mailchimp-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "mailgun-private-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "mailgun-pub-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "mailgun-signing-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "mapbox-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "mattermost-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "maxmind-license-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "cisco-meraki-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "messagebird-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "messagebird-client-id",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "netlify-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "new-relic-user-api-id",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "notion-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "npm-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "nytimes-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "octopus-deploy-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "okta-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "openai-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "perplexity-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "plaid-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "plaid-client-id",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "plaid-secret-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "planetscale-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "planetscale-oauth-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "planetscale-password",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "postman-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "prefect-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "privateai-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "pulumi-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "pypi-upload-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "rapidapi-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "readme-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "rubygems-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "scalingo-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "sendbird-access-id",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "sendbird-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "sendgrid-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "sendinblue-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "sentry-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "sentry-user-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "settlemint-application-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "settlemint-personal-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "settlemint-service-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "shippo-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "shopify-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "shopify-custom-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "shopify-private-app-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "shopify-shared-secret",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "sidekiq-secret",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "slack-app-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "slack-bot-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "slack-legacy-bot-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "slack-legacy-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "slack-legacy-workspace-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "slack-user-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "slack-webhook-url",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "snyk-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "sourcegraph-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "square-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "squarespace-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "stripe-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "sumologic-access-id",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "sumologic-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "telegram-bot-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "travisci-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "twilio-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "twitch-api-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "twitter-access-secret",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "twitter-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "twitter-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "twitter-api-secret",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "twitter-bearer-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "yandex-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "yandex-api-key",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "yandex-aws-access-token",
+      "samples": 60,
+      "regex_matches": 60
+    },
+    {
+      "format": "zendesk-secret-key",
+      "samples": 60,
+      "regex_matches": 60
+    }
+  ],
+  "dataset_formats": 191,
+  "current_catalog_formats": 191,
+  "catalog_formats_not_in_dataset": 0
+}

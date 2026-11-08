@@ -1,0 +1,152 @@
+{
+  "source_revision": "5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c",
+  "source_archive": {
+    "url": "https://codeload.github.com/gitleaks/gitleaks/zip/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c",
+    "final_url": "https://codeload.github.com/gitleaks/gitleaks/zip/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c",
+    "sha256": "b141407c12c6dd1568f4104171c24cad45c7e6bd892e399f23383183174e127f",
+    "retrieved_at": "2026-11-08T05:42:12.091917+00:00"
+  },
+  "source_config": {
+    "url": "https://raw.githubusercontent.com/gitleaks/gitleaks/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "final_url": "https://raw.githubusercontent.com/gitleaks/gitleaks/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/config/gitleaks.toml",
+    "sha256": "e163e53b9e7e8a8511e77271e2b323ed057759542a6d988258afe3a1fa329caf",
+    "retrieved_at": "2026-11-08T05:42:12.558602+00:00"
+  },
+  "existing_formats": 25,
+  "added_formats": 166,
+  "format_count": 191,
+  "service_count": 115,
+  "source_service_mapping": "explicit RuleID to source-file group; aliases are declared in the builder",
+  "verification": "10 distinct-seeded values x 4 contexts per added format; original Go regexp oracle",
+  "oracle_probe_count": 6641,
+  "skipped": [
+    {
+      "id": "1password-service-account-token",
+      "reason": "empty range in randrange(250, 101)"
+    },
+    {
+      "id": "age-secret-key",
+      "reason": "Generic/non-service rule or no explicit source-file mapping"
+    },
+    {
+      "id": "aws-amazon-bedrock-api-key-long-lived",
+      "reason": "empty range in randrange(109, 101)"
+    },
+    {
+      "id": "aws-amazon-bedrock-api-key-short-lived",
+      "reason": "Insufficient distinct synthesized values"
+    },
+    {
+      "id": "cloudflare-origin-ca-key",
+      "reason": "empty range in randrange(146, 101)"
+    },
+    {
+      "id": "curl-auth-header",
+      "reason": "Generic/non-service rule or no explicit source-file mapping"
+    },
+    {
+      "id": "curl-auth-user",
+      "reason": "Generic/non-service rule or no explicit source-file mapping"
+    },
+    {
+      "id": "dropbox-short-lived-api-token",
+      "reason": "empty range in randrange(135, 101)"
+    },
+    {
+      "id": "freemius-secret-key",
+      "reason": "Source context does not match the generated assignment"
+    },
+    {
+      "id": "generic-api-key",
+      "reason": "Generic/non-service rule or no explicit source-file mapping"
+    },
+    {
+      "id": "gocardless-api-token",
+      "reason": "Source context does not match the generated assignment"
+    },
+    {
+      "id": "hashicorp-tf-password",
+      "reason": "Source context does not match the generated assignment"
+    },
+    {
+      "id": "jwt",
+      "reason": "Generic/non-service rule or no explicit source-file mapping"
+    },
+    {
+      "id": "jwt-base64",
+      "reason": "Generic/non-service rule or no explicit source-file mapping"
+    },
+    {
+      "id": "kubernetes-secret-yaml",
+      "reason": "Generic/non-service rule or no explicit source-file mapping"
+    },
+    {
+      "id": "lob-api-key",
+      "reason": "Source context does not match the generated assignment"
+    },
+    {
+      "id": "lob-pub-api-key",
+      "reason": "Source context does not match the generated assignment"
+    },
+    {
+      "id": "microsoft-teams-webhook",
+      "reason": "Could not generate a printable, bounded value: microsoft-teams-webhook"
+    },
+    {
+      "id": "new-relic-browser-api-token",
+      "reason": "Source context does not match the generated assignment"
+    },
+    {
+      "id": "new-relic-insert-key",
+      "reason": "Source context does not match the generated assignment"
+    },
+    {
+      "id": "new-relic-user-api-key",
+      "reason": "Source context does not match the generated assignment"
+    },
+    {
+      "id": "nuget-config-password",
+      "reason": "No validated near-miss mutation for nuget-config-password"
+    },
+    {
+      "id": "openshift-user-token",
+      "reason": "bad escape \\z at position 34"
+    },
+    {
+      "id": "pkcs12-file",
+      "reason": "Generic/non-service rule or no explicit source-file mapping"
+    },
+    {
+      "id": "private-key",
+      "reason": "Generic/non-service rule or no explicit source-file mapping"
+    },
+    {
+      "id": "sentry-org-token",
+      "reason": "bad escape \\z at position 160"
+    },
+    {
+      "id": "sidekiq-sensitive-url",
+      "reason": "Source context does not match the generated assignment"
+    },
+    {
+      "id": "slack-config-access-token",
+      "reason": "empty range in randrange(163, 101)"
+    },
+    {
+      "id": "slack-config-refresh-token",
+      "reason": "empty range in randrange(146, 101)"
+    },
+    {
+      "id": "sonar-api-token",
+      "reason": "Source context does not match the generated assignment"
+    },
+    {
+      "id": "typeform-api-token",
+      "reason": "Source context does not match the generated assignment"
+    },
+    {
+      "id": "vault-batch-token",
+      "reason": "empty range in randrange(138, 101)"
+    }
+  ]
+}

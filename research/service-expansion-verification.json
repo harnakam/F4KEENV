@@ -1,0 +1,11 @@
+{
+  "service_count": 115,
+  "format_count": 191,
+  "generated_samples": 11460,
+  "source_go_regex_checked": 11400,
+  "source_go_regex_matched": 11400,
+  "approximate_hypixel_samples": 60,
+  "manifest_sha256": "6e2bac707087c24998db04c13f58b0bcfb2f3a6309b30fdf799fa498841a0e56",
+  "values_generated_locally": true,
+  "issuer_verification_requests": 0
+}

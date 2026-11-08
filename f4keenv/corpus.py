@@ -10,6 +10,7 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 from .store import BASE, identity, now
+from .tokens import value_for, near_miss
 
 CONTEXTS = ('env', 'json', 'yaml', 'python')
 
@@ -19,13 +20,6 @@ def rng_for(seed, *parts):
         return secrets.SystemRandom()
     digest = hashlib.sha256(json.dumps([seed, *parts]).encode()).digest()
     return random.Random(int.from_bytes(digest, 'big'))
-
-
-def value_for(spec, rng):
-    if spec['format'] == 'uuid4':
-        return str(uuid.UUID(int=rng.getrandbits(128), version=4))
-    return ''.join(part if isinstance(part, str) else ''.join(
-        rng.choice(part['alphabet']) for _ in range(part['length'])) for part in spec['parts'])
 
 
 def render(variable, value, context):
@@ -67,7 +61,7 @@ def generate_corpus(registry, output, positives=50, negatives=50, seed='f4keenv-
                 expected = kind == 'positive'
                 if kind == 'near_miss':
                     # A non-word separator breaks every supported catalog prefix/charset.
-                    value = '!' + value[1:]
+                    value = near_miss(spec, value)
                     if re.fullmatch(spec['pattern'], value):
                         raise ValueError('Near-miss mutation did not break the source pattern')
                 elif kind == 'natural_negative':
@@ -149,11 +143,15 @@ def public_templates(output, registry=None):
     catalog = json.loads((BASE / 'catalog/services.json').read_text(encoding='utf-8'))
     rows = []
     for spec in catalog:
-        template = '<uuid-v4>' if spec['format'] == 'uuid4' else ''.join(
-            part if isinstance(part, str) else f'<random:{part["length"]}>' for part in spec['parts'])
+        if spec['format'] == 'uuid4':
+            template = '<uuid-v4>'
+        elif spec['format'] == 'regex':
+            template = '<matches:' + spec['id'] + '>'
+        else:
+            template = ''.join(part if isinstance(part, str) else f'<random:{part["length"]}>' for part in spec['parts'])
         rows.append({'format': spec['id'], 'service': spec['service'], 'variable': spec['variable'],
                      'template': template, 'synthetic': True, 'public_release': True,
-                     'source': spec['source'], 'evidence': spec['evidence']})
+                     'source': spec['source'], 'evidence': spec['evidence'], 'pattern': spec['pattern']})
     if registry is not None:
         for credential in registry.rows('credentials'):
             if credential['evidence_kind'] != 'aggregated_openapi':
